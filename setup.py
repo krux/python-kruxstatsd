@@ -12,4 +12,11 @@ setup(
     author_email='paul@kruxdigital.com',
     include_package_data=True,
     package_data={'': ['README.rst']},
+    install_requires=[
+        'statsd',
+    ],
+    tests_require=[
+        'nose',
+        'fudge'
+    ]
 )
