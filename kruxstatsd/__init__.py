@@ -1,0 +1,22 @@
+try:
+    from django.conf import settings
+except ImportError:
+    settings = None
+
+from client import KruxStatsClient
+
+
+__all__ = ['KruxStatsClient', 'kruxstatsd']
+
+VERSION = (0, 1, 0)
+__version__ = '.'.join(map(str, VERSION))
+
+if settings:
+    try:
+        host = getattr(settings, 'STATSD_HOST', 'localhost')
+        port = getattr(settings, 'STATSD_PORT', 8125)
+        prefix = getattr(settings, 'STATSD_PREFIX', None)
+        env = getattr(settings, 'ENVIRONMENT', None)
+        kruxstatsd = KruxStatsClient(prefix, host, port, env)
+    except ImportError:
+        statsd = None
