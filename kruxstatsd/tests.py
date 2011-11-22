@@ -35,3 +35,13 @@ def test_context_manager(fake):
         'prod.js.mytimer.%s' % (hostname,), arg.any(), 1)
     with k.timer('mytimer'):
         assert True
+
+
+def test_incorrect_args():
+    k = kruxstatsd.KruxStatsClient('js', env='prod')
+    try:
+        k.incr()
+    except TypeError:
+        assert True
+    except:
+        assert False  # only exception thrown should be a TypeError

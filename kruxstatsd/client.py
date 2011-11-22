@@ -35,7 +35,8 @@ class KruxStatsClient(object):
         if callable(attr):
             @wraps(attr)
             def wrapper(*args, **kwargs):
-                stat = self._format(args[0])
-                return attr(stat, *args[1:], **kwargs)
+                if not args:
+                    return attr(*args, **kwargs)
+                return attr(self._format(args[0]), *args[1:], **kwargs)
             return wrapper
         return attr
