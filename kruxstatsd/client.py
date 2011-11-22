@@ -4,7 +4,7 @@ from functools import wraps
 import statsd
 
 
-class KruxStatsClient(object):
+class StatsClient(object):
 
     def __init__(self, prefix, host='localhost', port=8125, env=None):
         """Create a wrapper around ``pystatsd`` that abstracts away naming.
@@ -16,8 +16,9 @@ class KruxStatsClient(object):
         self.prefix = prefix
         self.env = env
 
-        # we intentionally don't send the prefix to ``StatsClient`` because all
-        # formatting happens in this library before sending it to pystatsd.
+        # we intentionally don't send the prefix to ``statsd.StatsClient``
+        # because all formatting happens in this library before sending
+        # it to pystatsd.
         self.client = statsd.StatsClient(host, port)
         self.hostname = socket.gethostname()
 

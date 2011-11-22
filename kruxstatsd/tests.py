@@ -17,20 +17,20 @@ def mock_statsd_method(kls, stat, count=1, rate=1):
 
 def test_stats_format_incr():
     fudge.patch_object(statsd.StatsClient, 'incr', mock_statsd_method)
-    k = kruxstatsd.KruxStatsClient('js', env='prod')
+    k = kruxstatsd.StatsClient('js', env='prod')
     k.incr('foo')
 
 
 def test_stats_format_timing():
     fudge.patch_object(statsd.StatsClient, 'timing', mock_statsd_method)
-    k = kruxstatsd.KruxStatsClient('js', env='prod')
+    k = kruxstatsd.StatsClient('js', env='prod')
     k.timing('foo.bar.baz')
 
 
 @fudge.patch('kruxstatsd.tests.mock_statsd_method')
 def test_context_manager(fake):
     fudge.patch_object(statsd.StatsClient, 'timing', mock_statsd_method)
-    k = kruxstatsd.KruxStatsClient('js', env='prod')
+    k = kruxstatsd.StatsClient('js', env='prod')
     fake.expects_call().with_args(
         'prod.js.mytimer.%s' % (hostname,), arg.any(), 1)
     with k.timer('mytimer'):
@@ -38,7 +38,7 @@ def test_context_manager(fake):
 
 
 def test_incorrect_args():
-    k = kruxstatsd.KruxStatsClient('js', env='prod')
+    k = kruxstatsd.StatsClient('js', env='prod')
     try:
         k.incr()
     except TypeError:
