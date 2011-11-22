@@ -20,7 +20,7 @@ class StatsClient(object):
         # because all formatting happens in this library before sending
         # it to pystatsd.
         self.client = statsd.StatsClient(host, port)
-        self.hostname = socket.gethostname()
+        self.hostname = socket.gethostname().split('.')[0]
 
     def _format(self, stat):
         """Format a stats string with the environment, prefix and hostname."""
