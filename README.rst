@@ -12,7 +12,7 @@ called ``ops-dev004.krxd.net``: ::
   k = kruxstatsd.StatsClient('js', env='stage')
   k.incr('foo')
 
-will create a stat named 'stage.js.foo.ops-dev004.krxd.net'.
+will create a stat named 'stage.js.foo.ops-dev004'.
 
 Usage
 -----
