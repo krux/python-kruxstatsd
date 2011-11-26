@@ -16,6 +16,9 @@ class StatsClient(object):
         self.prefix = prefix
         self.env = env
 
+        if env is None:
+            raise Exception('Env must be set')
+
         # we intentionally don't send the prefix to ``statsd.StatsClient``
         # because all formatting happens in this library before sending
         # it to pystatsd.
