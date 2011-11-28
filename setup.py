@@ -13,10 +13,10 @@ setup(
     include_package_data=True,
     package_data={'': ['README.rst']},
     install_requires=[
-        'statsd',
+        'statsd==0.3.0',
     ],
     tests_require=[
-        'nose',
-        'fudge'
+        'nose==1.1.2',
+        'fudge==1.0.3'
     ]
 )
