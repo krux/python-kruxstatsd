@@ -1,11 +1,9 @@
 from setuptools import setup, find_packages
 
-import kruxstatsd
-
 
 setup(
     name='kruxstatsd',
-    version=kruxstatsd.__version__,
+    version='0.2.0',
     description='A wrapper around pystatsd that does automatic namespacing',
     packages=find_packages(),
     author='Paul Osman',
