@@ -16,7 +16,7 @@ will create a counter stat named 'stage.js.foo.ops-dev004'.
 
 Similarly, the following: ::
 
-  k.timing('foo')
+  k.timing('foo', 'TIME')
 
 will create a timer stat named 'stage.js.foo.ops-dev004'.
 
