@@ -5,9 +5,9 @@ from fudge.inspector import arg
 
 import statsd
 
-hostname = socket.gethostname()
-env = 'prod'
-prefix = 'js'
+hostname = socket.gethostname().split('.')[0]
+env      = 'prod'
+prefix   = 'js'
 
 
 def mock_statsd_method(kls, stat, count=1, rate=1):
