@@ -37,7 +37,6 @@ setup(
     name                 = 'kruxstatsd',
     version              = VERSION,
     author               = 'Paul Osman',
-    author_email         = 'paul@kruxdigital.com',
     maintainer           = 'Paul Lathrop',
     maintainer_email     = 'paul@krux.com',
     description          = 'Wrapper around pystatsd with automatic namespacing',
