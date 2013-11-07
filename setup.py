@@ -10,7 +10,7 @@ import os
 
 
 # We use the version to construct the DOWNLOAD_URL.
-VERSION      = '0.2.1'
+VERSION      = '0.2.2'
 
 # URL to the repository on Github.
 REPO_URL     = 'https://github.com/krux/python-kruxstatsd'
