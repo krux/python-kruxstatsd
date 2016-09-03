@@ -44,8 +44,16 @@ class StatsClient(object):
 
     def _format(self, stat):
         """Format a stats string with the environment, prefix and hostname."""
-        return '%s.%s.%s.%s' % (
-            self.env, self.prefix, stat, self.hostname)
+        stat_list = [self.env, self.prefix]
+
+        if isinstance(stat, list):
+            stat_list += [str(s) for s in stat]
+        else:
+            stat_list.append(str(stat))
+
+        stat_list.append(self.hostname)
+
+        return '.'.join(stat_list)
 
     def __getattr__(self, attr):
         """Proxies calls to ``statsd.StatsClient`` methods.

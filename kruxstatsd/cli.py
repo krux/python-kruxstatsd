@@ -71,6 +71,9 @@ class Application(object):
         self.stats.incr('test', random.randint(1, 10))
         self.stats.incr(stat='kwargs_test', count=random.randint(1, 10))
         self.stats.gauge('test', random.randint(1, 10))
+        self.stats.gauge(1, random.randint(1, 10))
+        self.stats.gauge(['list', 'test'], random.randint(1, 10))
+        self.stats.gauge(stat=['list', 'kwargs', 1], value=random.randint(1, 10))
         with self.stats.timer('test'):
             time.sleep(random.randint(1, 5))
 
