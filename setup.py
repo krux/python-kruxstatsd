@@ -34,7 +34,8 @@ setup(
         'statsd==2.0.3',
     ],
     tests_require=[
-        'nose==1.1.2',
-        'fudge==1.0.3'
+        'coverage==4.2',
+        'mock==1.1.2',
+        'nose==1.3.7',
     ]
 )
