@@ -56,8 +56,12 @@ class StatsClient(object):
         if callable(attr):
             @wraps(attr)
             def wrapper(*args, **kwargs):
-                if not args:
+                if len(args) > 0:
+                    return attr(self._format(args[0]), *args[1:], **kwargs)
+                elif kwargs.get('stat', None) is not None:
+                    kwargs['stat'] = self._format(kwargs['stat'])
                     return attr(*args, **kwargs)
-                return attr(self._format(args[0]), *args[1:], **kwargs)
+                else:
+                    return attr(*args, **kwargs)
             return wrapper
         return attr
