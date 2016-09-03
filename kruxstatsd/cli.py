@@ -9,6 +9,7 @@
 
 import sys
 import random
+import time
 
 #
 # Third party libraries
@@ -68,6 +69,9 @@ class Application(object):
 
     def run(self):
         self.stats.incr('test', random.randint(1, 10))
+        self.stats.gauge('test', random.randint(1, 10))
+        with self.stats.timer('test'):
+            time.sleep(random.randint(1, 5))
 
 
 def main():
