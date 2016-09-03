@@ -32,11 +32,17 @@ setup(
     packages=find_packages(),
     install_requires=[
         'statsd==2.0.3',
+        'argparse==1.4.0',
     ],
     tests_require=[
         'coverage==4.2',
         'mock==1.1.2',
         'nose==1.3.7',
         'fudge==1.1.0',
-    ]
+    ],
+    entry_points={
+        'console_scripts': [
+            'kruxstatsd-test = kruxstatsd.cli:main',
+        ],
+    }
 )
