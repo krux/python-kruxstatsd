@@ -1,5 +1,5 @@
 # The library this is wrapping
-statsd==2.0.3
+statsd==3.2.1
 
 # For cli.py
 argparse==1.4.0

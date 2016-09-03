@@ -31,7 +31,7 @@ setup(
     license='MIT',
     packages=find_packages(),
     install_requires=[
-        'statsd==2.0.3',
+        'statsd==3.2.1',
         'argparse==1.4.0',
     ],
     tests_require=[
