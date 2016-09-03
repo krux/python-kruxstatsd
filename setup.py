@@ -37,5 +37,6 @@ setup(
         'coverage==4.2',
         'mock==1.1.2',
         'nose==1.3.7',
+        'fudge==1.1.0',
     ]
 )

@@ -1,7 +1,24 @@
+# -*- coding: utf-8 -*-
+#
+# © 2011-2016 Krux Digital, Inc.
+#
+
+#
+# Standard libraries
+#
+
 import socket
 from functools import wraps
 
+#
+# Third party libraries
+#
+
 import statsd
+
+#
+# Internal libraries
+#
 
 
 class StatsClient(object):
