@@ -8,7 +8,6 @@
 #
 
 import sys
-import random
 import time
 
 #
@@ -68,14 +67,14 @@ class Application(object):
         return parser
 
     def run(self):
-        self.stats.incr('test', random.randint(1, 10))
-        self.stats.incr(stat='kwargs_test', count=random.randint(1, 10))
-        self.stats.gauge('test', random.randint(1, 10))
-        self.stats.gauge(1, random.randint(1, 10))
-        self.stats.gauge(['list', 'test'], random.randint(1, 10))
-        self.stats.gauge(stat=['list', 'kwargs', 1], value=random.randint(1, 10))
+        self.stats.incr('test', 2)
+        self.stats.incr(stat='kwargs_test', count=3)
+        self.stats.gauge('test', 4)
+        self.stats.gauge(1, 5)
+        self.stats.gauge(['list', 'test'], 6)
+        self.stats.gauge(stat=['list', 'kwargs', 1], value=7)
         with self.stats.timer('test'):
-            time.sleep(random.randint(1, 5))
+            time.sleep(1)
 
 
 def main():
