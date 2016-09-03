@@ -1,13 +1,32 @@
-import kruxstatsd
+# -*- coding: utf-8 -*-
+#
+# © 2011-2016 Krux Digital, Inc.
+#
+
+#
+# Standard libraries
+#
+
 import socket
+
+#
+# Third party libraries
+#
+
+import statsd
 import fudge
 from fudge.inspector import arg
 
-import statsd
+#
+# Internal libraries
+#
+
+import kruxstatsd
+
 
 hostname = socket.gethostname().split('.')[0]
-env      = 'prod'
-prefix   = 'js'
+env = 'prod'
+prefix = 'js'
 
 
 def mock_statsd_method(kls, stat, count=1, rate=1):
