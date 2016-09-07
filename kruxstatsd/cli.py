@@ -25,6 +25,15 @@ import kruxstatsd
 
 
 class Application(object):
+    """
+    A CLI application designed for development testing of kruxstatsd.
+    The goal of this class is to provide a quick and dirty client of kruxstatsd to be used during development.
+
+    This does not replace a proper unit test.
+    Also, unlike other CLI applications for krux libraries, this class is not designed to be inherited by other
+    CLI as a quick bootstrap of kruxstatsd. Use krux.cli.Application for that.
+    """
+
     NAME = 'kruxstatsd-test'
     DEFAULT_HOST = 'localhost'
     DEFAULT_PORT = 8125
