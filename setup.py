@@ -9,7 +9,7 @@ import os
 
 
 # We use the version to construct the DOWNLOAD_URL.
-VERSION = '0.3.0'
+VERSION = '0.3.1'
 
 # URL to the repository on Github.
 REPO_URL = 'https://github.com/krux/python-kruxstatsd'
@@ -31,14 +31,14 @@ setup(
     license='MIT',
     packages=find_packages(),
     install_requires=[
-        'statsd==3.2.1',
-        'argparse==1.4.0',
+        'statsd',
+        'argparse',
     ],
     tests_require=[
-        'coverage==4.2',
-        'mock==1.1.2',
-        'nose==1.3.7',
-        'fudge==1.1.0',
+        'coverage',
+        'mock',
+        'nose',
+        'fudge',
     ],
     entry_points={
         'console_scripts': [
