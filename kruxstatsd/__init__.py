@@ -1,9 +1,12 @@
+from __future__ import absolute_import
+
+
 try:
     from django.conf import settings
 except ImportError:
     settings = None
 
-from client import StatsClient
+from kruxstatsd.client import StatsClient
 
 
 __all__ = ['StatsClient', 'kruxstatsd']
