@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# © 2013, 2014 Krux Digital, Inc.
+# © 2013-2018 Salesforce.com, inc.
 #
 
 from setuptools import setup, find_packages

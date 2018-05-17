@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+#
+# © 2011-2018 Salesforce.com, inc.
+#
 from __future__ import absolute_import
 
 

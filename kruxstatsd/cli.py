@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# © 2011-2016 Krux Digital, Inc.
+# © 2011-2018 Salesforce.com, inc.
 #
 
 #
