@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# © 2011-2016 Krux Digital, Inc.
+# © 2011-2018 Salesforce.com, inc.
 #
 
 #
@@ -46,7 +46,7 @@ def test_stats_format_timing():
     k.timing('foo.bar.baz')
 
 
-@fudge.patch('kruxstatsd.tests.mock_statsd_method')
+@fudge.patch('tests.tests.mock_statsd_method')
 def test_context_manager(fake):
     fudge.patch_object(statsd.StatsClient, 'timing', mock_statsd_method)
     k = kruxstatsd.StatsClient('js', env='prod')

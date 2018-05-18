@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+#
+# © 2011-2018 Salesforce.com, inc.
+#
 from __future__ import absolute_import
 
 
@@ -11,7 +15,7 @@ from kruxstatsd.client import StatsClient
 
 __all__ = ['StatsClient', 'kruxstatsd']
 
-VERSION = (0, 2, 0)
+VERSION = (0, 3, 3)
 __version__ = '.'.join(map(str, VERSION))
 
 if settings:
