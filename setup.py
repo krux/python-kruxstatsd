@@ -4,22 +4,19 @@
 #
 
 from setuptools import setup, find_packages
-
-
-# We use the version to construct the DOWNLOAD_URL.
-VERSION = '0.3.2'
+from kruxstatsd import __version__
 
 # URL to the repository on Github.
 REPO_URL = 'https://github.com/krux/python-kruxstatsd'
 
 # Github will generate a tarball as long as you tag your releases, so don't
 # forget to tag!
-DOWNLOAD_URL = ''.join((REPO_URL, '/tarball/release/', VERSION))
+DOWNLOAD_URL = ''.join((REPO_URL, '/tarball/release/', __version__))
 
 
 setup(
     name='kruxstatsd',
-    version=VERSION,
+    version=__version__,
     author='Paul Osman',
     maintainer='Paul Lathrop',
     maintainer_email='paul@krux.com',
