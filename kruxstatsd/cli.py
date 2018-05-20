@@ -7,14 +7,13 @@
 # Standard libraries
 #
 
-import sys
+from __future__ import absolute_import
 import time
 
 #
 # Third party libraries
 #
 
-import statsd
 from argparse import ArgumentParser
 
 #
