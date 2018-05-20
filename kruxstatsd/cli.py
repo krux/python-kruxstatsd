@@ -21,7 +21,7 @@ from argparse import ArgumentParser
 # Internal libraries
 #
 
-import kruxstatsd
+from kruxstatsd.client import StatsClient
 
 
 class Application(object):
@@ -46,7 +46,7 @@ class Application(object):
         self.add_cli_arguments(self.parser)
         self.args = self.parser.parse_args()
 
-        self.stats = kruxstatsd.StatsClient(
+        self.stats = StatsClient(
             prefix=self.name,
             host=self.args.host,
             port=self.args.port,
