@@ -12,10 +12,10 @@ except ImportError:
 
 from kruxstatsd.client import StatsClient
 
+from kruxstatsd.version import VERSION
 
 __all__ = ['StatsClient', 'kruxstatsd']
 
-VERSION = (0, 3, 3)
 __version__ = '.'.join(map(str, VERSION))
 
 if settings:

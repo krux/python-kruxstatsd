@@ -5,13 +5,13 @@ name = "pypi"
 
 [packages]
 statsd = "==3.2.2"
-argparse = "==1.4.0"
 
 [dev-packages]
 coverage = "*"
 mock = "*"
 nose = "*"
 fudge = "*"
+flake8 = "*"
 
 [requires]
 python_version = "2.7"

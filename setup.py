@@ -27,13 +27,13 @@ setup(
     packages=find_packages(exclude=['tests']),
     install_requires=[
         'statsd',
-        'argparse',
     ],
     tests_require=[
         'coverage',
         'mock',
         'nose',
         'fudge',
+        'statsd',
     ],
     entry_points={
         'console_scripts': [

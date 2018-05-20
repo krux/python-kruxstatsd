@@ -7,14 +7,12 @@
 # Standard libraries
 #
 
-import sys
 import time
 
 #
 # Third party libraries
 #
 
-import statsd
 from argparse import ArgumentParser
 
 #
