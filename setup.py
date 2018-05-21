@@ -9,7 +9,7 @@ VERSION = "0.3.4"
 # URL to the repository on Github.
 REPO_URL = 'https://github.com/krux/python-kruxstatsd'
 PACKAGE_NAME = 'kruxstatsd'
-VERSION_FILE = '{}/version.py'.format(PACKAGE_NAME)
+VERSION_FILE = PACKAGE_NAME + '/_version.py'
 
 # Retrieve __version__ from file without evaluating any other part of the module.
 __version__ = None  # squelch code inspection

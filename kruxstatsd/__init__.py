@@ -4,16 +4,15 @@
 #
 from __future__ import absolute_import
 
-from kruxstatsd.version import __version__
-
-VERSION = __version__.split('.')
+from ._version import __version__
+from .client import StatsClient
 
 try:
     from django.conf import settings
 except ImportError:
     settings = None
 
-from kruxstatsd.client import StatsClient
+VERSION = __version__.split('.')
 
 __all__ = ['StatsClient', 'kruxstatsd']
 
