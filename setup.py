@@ -5,7 +5,6 @@
 
 from setuptools import setup, find_packages
 
-VERSION = "0.3.4"
 # URL to the repository on Github.
 REPO_URL = 'https://github.com/krux/python-kruxstatsd'
 PACKAGE_NAME = 'kruxstatsd'
