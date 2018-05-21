@@ -4,10 +4,15 @@
 #
 
 from setuptools import setup, find_packages
-from kruxstatsd import __version__
 
 # URL to the repository on Github.
 REPO_URL = 'https://github.com/krux/python-kruxstatsd'
+PACKAGE_NAME = 'kruxstatsd'
+VERSION_FILE = PACKAGE_NAME + '/_version.py'
+
+# Retrieve __version__ from file without evaluating any other part of the module.
+__version__ = None  # squelch code inspection
+execfile(VERSION_FILE)
 
 # Github will generate a tarball as long as you tag your releases, so don't
 # forget to tag!
@@ -15,7 +20,7 @@ DOWNLOAD_URL = ''.join((REPO_URL, '/tarball/release/', __version__))
 
 
 setup(
-    name='kruxstatsd',
+    name=PACKAGE_NAME,
     version=__version__,
     author='Paul Osman',
     maintainer='Paul Lathrop',
@@ -27,7 +32,6 @@ setup(
     packages=find_packages(exclude=['tests']),
     install_requires=[
         'statsd',
-        'argparse',
     ],
     tests_require=[
         'coverage',
