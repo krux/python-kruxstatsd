@@ -4,6 +4,9 @@
 #
 from __future__ import absolute_import
 
+from kruxstatsd.version import __version__
+
+VERSION = __version__.split('.')
 
 try:
     from django.conf import settings
@@ -12,12 +15,7 @@ except ImportError:
 
 from kruxstatsd.client import StatsClient
 
-
 __all__ = ['StatsClient', 'kruxstatsd']
-
-# GOTCHA: Setup.py reads this file looking for the __version__ line:
-__version__ = '0.3.4'
-VERSION = __version__.split('.')
 
 if settings:
     try:
