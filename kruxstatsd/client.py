@@ -7,6 +7,7 @@
 # Standard libraries
 #
 
+from __future__ import absolute_import
 import socket
 from functools import wraps
 
