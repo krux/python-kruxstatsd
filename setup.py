@@ -14,7 +14,6 @@ VERSION_FILE = '{}/version.py'.format(PACKAGE_NAME)
 # Retrieve __version__ from file without evaluating any other part of the module.
 __version__ = None  # squelch code inspection
 execfile(VERSION_FILE)
-print(__version__)
 
 # Github will generate a tarball as long as you tag your releases, so don't
 # forget to tag!
