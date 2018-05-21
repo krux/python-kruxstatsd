@@ -17,6 +17,9 @@ VERSION_FILE = '{}/__init__.py'.format(PACKAGE_NAME)
 # The version info is in kruxstatsd/__init__.py, but that file has code in it
 # that we can't execute because it imports packages that aren't installed yet.
 # We treat it as a plain text file and extract the value.
+# This is a common issue, and this is a common solution:
+# PyPA - Python Packaging User Guide - Guides - Single-sourcing the package version
+# https://packaging.python.org/guides/single-sourcing-package-version/
 def get_version(filename):
     """
     Get __version__ from a Python file without evaluating the file.
