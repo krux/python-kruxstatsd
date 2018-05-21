@@ -12,11 +12,12 @@ except ImportError:
 
 from kruxstatsd.client import StatsClient
 
-from kruxstatsd.version import VERSION
 
 __all__ = ['StatsClient', 'kruxstatsd']
 
-__version__ = '.'.join(map(str, VERSION))
+# GOTCHA: Setup.py reads this file looking for the __version__ line:
+__version__ = '0.3.4'
+VERSION = __version__.split('.')
 
 if settings:
     try:
