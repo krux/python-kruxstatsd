@@ -1,4 +1,14 @@
 [[source]]
+url = "${KRUX_PIP_PROP_URL}"
+verify_ssl = true
+name = "kruxprop"
+
+[[source]]
+url = "${KRUX_PIP_FOSS_URL}"
+verify_ssl = true
+name = "kruxfoss"
+
+[[source]]
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
