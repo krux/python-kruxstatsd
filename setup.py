@@ -3,14 +3,14 @@
 # © 2013 Krux Digital, Inc.
 #
 
-from pip.req    import parse_requirements
 from setuptools import setup, find_packages
-
+import subprocess
 import os
+import sys
 
 
 # We use the version to construct the DOWNLOAD_URL.
-VERSION      = '0.2.2'
+VERSION      = '0.2.2.post1'
 
 # URL to the repository on Github.
 REPO_URL     = 'https://github.com/krux/python-kruxstatsd'
@@ -29,9 +29,10 @@ REQUIREMENTS = os.path.join(BASE_DIR, 'requirements.pip')
 # A requirement file can contain comments (#) and can include some other
 # files (--requirement or -r), so we need to use pip's parser to get the
 # final list of dependencies.
-DEPENDENCIES = [unicode(package.req)
-                for package in parse_requirements(REQUIREMENTS)]
-
+DEPENDENCIES = []
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', 'requirements.pip'])
+freeze = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze'])
+DEPENDENCIES = freeze.split('\n')
 
 setup(
     name                 = 'kruxstatsd',
