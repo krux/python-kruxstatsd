@@ -1,0 +1,24 @@
+# Include base requirements
+-r requirements.txt
+
+# For unit tests
+coverage==4.5.3
+mock==3.0.5
+nose==1.3.7
+
+flake8==3.7.7
+
+# Transitive libraries
+# This is needed so there are no version conflicts when
+# one downstream library does NOT specify the version it wants,
+# and another one does.
+
+configparser==3.7.4; python_version < '3.2'
+enum34==1.1.6; python_version < '3.4'
+fudge==1.1.1
+funcsigs==1.0.2 ; python_version < '3.3'
+mccabe==0.6.1
+pbr==5.2.1
+pycodestyle==2.5.0
+pyflakes==2.1.1
+six==1.12.0; python_version > '3.0'
